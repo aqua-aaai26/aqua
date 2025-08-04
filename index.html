@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Semantic-Preserving and Temporal Consistent Video Motion Transfer with Aligned Query Injection">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AQUA</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <head>
+  <style>
+    .carousel.results-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 10px; /* 슬라이드 사이 간격 */
+      padding: 10px 0;
+    }
+
+    .carousel.results-carousel .item {
+      flex: 0 0 50%; /* 화면의 50% 차지 → 두 개만 보임 */
+      scroll-snap-align: center;
+      box-sizing: border-box;
+    }
+
+    /* 필요 시 스크롤바 숨김 (선택사항) */
+    .carousel.results-carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel.results-carousel {
+      -ms-overflow-style: none;  /* IE/Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+  </style>
+</head>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Semantic-Preserving and Temporal Consistent Video Motion Transfer with Aligned Query Injection</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              Anonymous submission
+            </span>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+<br>
+<br>
+<br>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="column has-text-centered">
+      <div class="hero-body">
+          <div class="centerImage">
+            <img src="./static/images/fig0_main.gif" alt="first" width="100%">
+          </div>
+          <p style="font-size: 15px;">
+            We present <b>AQUA</b>, a training-free motion transfer method for text-to-video diffusion models that enhances semantic reflection and temporal consistency.
+            Direct query injection introduces unintended reference content, such as a mountain background, a backpack artifact (top), and a car (bottom),
+            along with abrupt visual artifacts like a green object (top) and a purple region (bottom). In contrast, AQUA generates temporally coherent videos, faithfully aligned with the target prompt.
+          </p>
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+
+<section class="hero is-small" style="background-color: #f5f5f5;">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-fifths">
+        <div class="container">
+          <!-- 슬라이더 시작 -->
+          <div id="gif-carousel" class="carousel results-carousel">
+            <div class="item gif1">
+              <img src="./static/images/fig0_snowboard.gif" alt="gif1" style="width:100%">
+            </div>
+            <div class="item gif2">
+              <img src="./static/images/fig0_goldfish.gif" alt="gif2" style="width:100%">
+            </div>
+            <div class="item gif3">
+              <img src="./static/images/fig0_rhino.gif" alt="gif3" style="width:100%">
+            </div>
+            <div class="item gif4">
+              <img src="./static/images/fig0_cow.gif" alt="gif4" style="width:100%">
+            </div>
+          </div>
+            <p style="font-size: 15px;">
+                <b>Additional Results from AQUA</b>
+            </p>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Abstract</h2>
+        <br>
+        <div class="content has-text-justified">
+          <p style="font-size: 15px;">
+            Diffusion models have enabled motion transfer that reflects motion from a reference video while aligning with a given target prompt.
+            Prior methods typically require model training or fine-tuning, limiting their flexibility and broad applicability.
+            Recently, training-free methods have received attention as a more generalizable alternative.
+            Among these, the approach utilizing self-attention query features from the reference video provides a simple yet effective strategy.
+            However, direct use of reference query features often generates videos with unwanted visual details from the reference video and frame-level flickering.
+            In this paper, we analyze query features in terms of motion transfer and propose a query fusion method that modulates the reference query features to address these problems.
+            Specifically, our method, AQUA, adaptively fuses the reference and target query features to remain faithful to the target prompt while following the reference motion.
+            Furthermore, AQUA employs a multi-frame guidance to ensure temporal consistency. Extensive experiments demonstrate that our method outperforms existing methods without additional training or optimization.
+          </p>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <br>
+      <h2 class="title is-2">Video</h2>
+        <div class="centerImage">
+          <video width="100%" controls>
+            <source src="./static/videos/ppt_compact.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      <br>
+      <br>
+      <br>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Query analysis. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Analysis of Query in Self-attention</h2>
+          <div class="content has-text-justified">
+            <div class="centerImage" style="display: flex; justify-content: center; gap: 20px;">
+            <img src="./static/images/fig3_query_analysis_1.png" alt="pipeline" style="width: 50%;">
+            <img src="./static/images/fig3_query_analysis_2.png" alt="pipeline" style="width: 50%;">
+          </div>
+            <br>
+            <p style="font-size: 15px;">
+              <b>Query analysis.</b>
+              Visualization of the reference video, PCA projection query features, and their t-x slices.
+              The query feature maintains consistent spatial representations across time, aligned with the reference video.
+            </p>
+            <br>
+            <br>
+          </div>
+          <div class="content has-text-justified">
+            <div class="centerImage">
+              <img src="./static/images/fig2_query_issues.png" alt="pipeline" width="80%">
+            </div>
+            <br>
+            <p style="font-size: 15px;">
+              <b>Query-induced issues.</b>
+              (a) Failure example. Reference bias is visible in the leaked mountain background and the backpack-like artifact (green box), while temporal inconsistency appears as an abrupt green object (yellow box).
+              (b) Our result. The generated video aligns with the target prompt and exhibits improved temporal consistency.
+            </p>
+            <br>
+            <br>
+          </div>
+      </div>
+    </div>
+  </div>
+    <!--/ Query analysis. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Method</h2>
+          <div class="content has-text-justified">
+            <div class="centerImage">
+              <img src="./static/images/fig4_overall_framework.png" alt="pipeline" width="100%">
+            </div>
+            <br>
+            <p style="font-size: 15px;">
+              <b>Overall framework of AQUA.</b>
+              (a) Given a reference video, we perform DDPM inversion to extract query features.
+              The noise from the inversion is then used to generate a video via DAWN and RTA, which utilize the query features.
+              (b) The reference and target queries are adaptively fused using a distribution-aware weight function D to guide motion transfer.
+              (c) Multi-frame attention output Ai is incorporated to enhance temporal consistency by utilizing contextual information from the
+              current frame (i), previous frame (i − 1), and first frame (1).
+            </p>
+            <br>
+            <br>
+          </div>
+      </div>
+    </div>
+  </div>
+    <!--/ Method. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Qualitative Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h4 class="title is-2">Qualitative Results.</h4>
+          <div class="content has-text-justified">
+            <p style="font-size: 15px;">
+              We provide qualitative results for our method and other baseline models, where videos are generated based on the reference video and guided by the target prompt.
+              Our method produces videos that are both temporally consistent and semantically aligned with the given prompt.
+            </p>
+          </div>
+      </div>
+    </div>
+  </div>
+    <!--/ Qualitative Results. -->
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-fifths">
+        <div class="container">
+          <!-- 슬라이더 시작 -->
+          <div id="gif-carousel" class="carousel results-carousel">
+            <div class="item gif1">
+              <img src="./static/images/fig6_baseline_vs_ours_stunt.gif" alt="gif1" style="width:100%">
+            </div>
+            <div class="item gif2">
+              <img src="./static/images/fig6_baseline_vs_ours_horsejump.gif" alt="gif2" style="width:100%">
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-three-fifths">
+        <div class="container">
+          <!-- 슬라이더 시작 -->
+          <div id="gif-carousel" class="carousel results-carousel">
+            <div class="item gif3">
+              <img src="./static/images/fig6_baseline_vs_ours_shooting.gif" alt="gif3" style="width:100%">
+            </div>
+            <div class="item gif4">
+              <img src="./static/images/fig6_baseline_vs_ours_bmx.gif" alt="gif4" style="width:100%">
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Quantitative comparison. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Quantitative comparison.</h2>
+        <br>
+          <div class="content has-text-justified">
+            <br>
+            <div class="centerImage">
+              <img src="./static/images/table1_quantitative.png" alt="pipeline" width="100%">
+            </div>
+            <br>
+            <p style="font-size: 15px;">
+              We conduct our experiments on the MTBench HQ. The evaluation consists of three aspects:
+              (1) Automatic metrics, referring to algorithmically computed measures that assess prompt alignment, temporal consistency, and motion fidelity;
+              (2) Human evaluation, providing subjective assessment of the same criteria; and
+              (3) Efficiency metrics, including computation time and peak memory usage for generating a motion-transferred video from a reference video  
+            </p>
+          </div>
+          <br>
+          <br>
+      </div>
+    </div>
+  </div>
+  <!-- Quantitative comparison. -->
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
